@@ -10,4 +10,6 @@
 
 @interface CRSlotLabel : UILabel
 
+@property (nonatomic, readwrite) NSTimeInterval animationTime;
+
 @end

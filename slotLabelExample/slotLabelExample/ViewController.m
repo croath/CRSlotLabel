@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "CRSlotLabel.h"
 
-@interface ViewController ()
+@interface ViewController (){
+  CRSlotLabel *label;
+}
 
 @end
 
@@ -17,7 +20,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+  label = [[CRSlotLabel alloc] initWithFrame:CGRectMake(0, 0, 300, 50)];
+  [label setAnimationTime:5.0f];
+  [label setText:@"10000"];
+  
+  [self.view addSubview:label];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+  [super viewDidAppear:animated];
+  [label setText:@"6"];
 }
 
 - (void)didReceiveMemoryWarning
